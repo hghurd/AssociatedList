@@ -6,37 +6,51 @@ public class AssociatedList implements SimpleMap{
     private int size = 0;
 
     @Override
-    public Integer get(String key) {
+    public Integer get( String key ) {
         return null;
     }
 
     @Override
-    public Integer put(String key, Integer value) {
-        Entry newEntry = new Entry( key, value );
-        entryList.add( newEntry );
-        size++;
-        return null;
+    public Integer put( String key, Integer value ) {
+        Entry newEntry = null;
+        Integer result = null;
+        if( entryList.contains( key ) ){
+
+            entryList.get(entryList.indexOf(key));
+
+          newEntry = new Entry( key, value );
+          entryList.add( newEntry );
+
+        } else {
+
+            newEntry = new Entry( key, value );
+            entryList.add( newEntry );
+            size++;
+
+        }
+
+        return result;
     }
 
     @Override
-    public Integer remove(String key) {
+    public Integer remove( String key ) {
 
         size--;
         return null;
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean isEmpty( ) {
         return ( size == 0 );
     }
 
     @Override
-    public int size() {
+    public int size( ) {
         return size;
     }
 
     @Override
-    public List<Entry> entryList() {
+    public List<Entry> entryList( ) {
         return null;
     }
 }
